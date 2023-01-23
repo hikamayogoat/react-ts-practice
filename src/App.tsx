@@ -1,7 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import { PROPERTY_TYPES } from '@babel/types';
+import { Child1, Child2 } from './components/Child';
 
 type Item = {
   id: number,
@@ -24,17 +23,12 @@ type Props = {
   children: React.ReactNode
 }
 
-const Child: React.FC<Props> = ({ number, children })=> {
-  return (
-    <p>{ number } の { children }</p>
-  )
-}
 
 const App: React.FC = () => {
   return (
     <div className="App">
-      <Child number="1">子のコンポーネント1</Child>
-      <Child number="2">子のコンポーネント2</Child>
+      <Child1 />
+      <Child2 />
     </div>
   );
 }

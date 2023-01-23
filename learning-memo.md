@@ -4,4 +4,5 @@
   - 記事だと `--typescript`
 - デフォルトエクスポートについては考えることがありそう
   - https://engineering.linecorp.com/ja/blog/you-dont-need-default-export/
+  - 一応デフォルトエクスポート・名前付きエクスポートについてはなんとなく掴めた
 
