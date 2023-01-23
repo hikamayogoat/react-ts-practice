@@ -1,34 +1,24 @@
-import React from 'react';
+import React, { useCallback, useState } from 'react';
 import './App.css';
-import { Child1, Child2 } from './components/Child';
-
-type Item = {
-  id: number,
-  title: string,
-};
-
-const items: Item[] = [
-  {
-    id: 1,
-    title: "商品1"
-  },
-  {
-    id: 2,
-    title: "商品2"
-  }
-];
-
-type Props = {
-  number: string
-  children: React.ReactNode
-}
-
 
 const App: React.FC = () => {
+  const [count, setCount] = useState<number>(0);
+
+  const handleIncrement = useCallback(() => {
+    setCount(prev => prev + 1)
+  }, []);
+
+  const handleDecrement = useCallback(() => {
+    setCount(prev => prev - 1)
+  }, []);
+
   return (
     <div className="App">
-      <Child1 />
-      <Child2 />
+      <div>{ count }</div>
+      <div>
+        <button onClick={handleIncrement}>+1</button>
+        <button onClick={handleDecrement}>-1</button>
+      </div>
     </div>
   );
 }
